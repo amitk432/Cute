@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Go On a Date With Me? 🌸</title>
+  <meta name="description" content="A cute and playful date invitation app — say yes! 💖" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hearts-bg" id="heartsBg"></div>
+  <div class="confetti-container" id="confettiContainer"></div>
+
+  <!-- SCREEN 1: Ask Screen -->
+  <div class="screen active" id="screen1">
+    <div class="card">
+      <div class="pet-avatar">
+        <div class="pet-emoji">🐶</div>
+        <div class="sparkle-ring"></div>
+      </div>
+      <h1 class="main-question">
+        🌸 Will you go on a<br/>date with me? 🌸
+      </h1>
+      <p class="subtitle">i promise i'm kinda fun 🥺</p>
+      <div class="btn-group">
+        <button class="btn btn-yes" id="yesBtn" onclick="goToScreen(2)">YES ♥</button>
+        <button class="btn btn-no" id="noBtn" onmouseover="runAway()" ontouchstart="runAway()">no 🐾</button>
+      </div>
+      <p class="tiny-text">*the no button is broken, sorry 🙃</p>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: YES Response -->
+  <div class="screen" id="screen2">
+    <div class="card card-surprise">
+      <div class="surprise-emoji bounce">😭</div>
+      <h2 class="surprise-title">WAIT YOU ACTUALLY<br/>SAID YES??</h2>
+      <p class="surprise-sub">i was so ready for you to say no 😅</p>
+      <p class="surprise-sub2">okay okay okay let me collect myself real quick</p>
+      <div class="dots-loader"><span></span><span></span><span></span></div>
+      <button class="btn btn-pink" onclick="goToScreen(3)" style="margin-top:1.5rem">okay okay! →</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: Pick a Date & Time -->
+  <div class="screen" id="screen3">
+    <div class="card">
+      <div class="calendar-icon">📅 🐾</div>
+      <h2 class="section-title">So... when are you free?</h2>
+      <div class="form-group">
+        <label class="form-label">Pick a Day 📆</label>
+        <input type="date" id="datePicker" class="cute-input" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Pick a Time ⏰</label>
+        <select id="timePicker" class="cute-select">
+          <option value="">Select a time...</option>
+          <option>12:00 PM</option><option>12:30 PM</option>
+          <option>1:00 PM</option><option>1:30 PM</option>
+          <option>2:00 PM</option><option>2:30 PM</option>
+          <option>3:00 PM</option><option>3:30 PM</option>
+          <option>4:00 PM</option><option>4:30 PM</option>
+          <option>5:00 PM</option><option>5:30 PM</option>
+          <option>6:00 PM</option><option>6:30 PM</option>
+          <option>7:00 PM</option><option>7:30 PM</option>
+          <option>8:00 PM</option><option>8:30 PM</option>
+          <option>9:00 PM</option>
+        </select>
+      </div>
+      <button class="btn btn-pink" onclick="validateDate()">lock in the date! ♥</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 4: Food Vibe -->
+  <div class="screen" id="screen4">
+    <div class="card">
+      <h2 class="section-title">What are we feeling? 🍽✨</h2>
+      <p class="pick-subtitle">pick your vibe</p>
+      <div class="food-grid">
+        <button class="food-card" onclick="selectFood(this,'Pizza')" id="food-Pizza"><span class="food-emoji">🍕</span><span class="food-name">Pizza</span></button>
+        <button class="food-card" onclick="selectFood(this,'Sushi')" id="food-Sushi"><span class="food-emoji">🍣</span><span class="food-name">Sushi</span></button>
+        <button class="food-card" onclick="selectFood(this,'Burgers')" id="food-Burgers"><span class="food-emoji">🍔</span><span class="food-name">Burgers</span></button>
+        <button class="food-card" onclick="selectFood(this,'Pasta')" id="food-Pasta"><span class="food-emoji">🍝</span><span class="food-name">Pasta</span></button>
+        <button class="food-card" onclick="selectFood(this,'Tacos')" id="food-Tacos"><span class="food-emoji">🌮</span><span class="food-name">Tacos</span></button>
+        <button class="food-card" onclick="selectFood(this,'Ramen')" id="food-Ramen"><span class="food-emoji">🍜</span><span class="food-name">Ramen</span></button>
+        <button class="food-card" onclick="selectFood(this,'Ice Cream')" id="food-IceCream"><span class="food-emoji">🍦</span><span class="food-name">Ice Cream</span></button>
+        <button class="food-card" onclick="selectFood(this,'Coffee Date')" id="food-Coffee"><span class="food-emoji">☕</span><span class="food-name">Coffee</span></button>
+        <button class="food-card" onclick="selectFood(this,'Desserts')" id="food-Desserts"><span class="food-emoji">🧁</span><span class="food-name">Desserts</span></button>
+      </div>
+      <button class="btn btn-pink" id="foodNextBtn" onclick="goToScreen(5)" disabled>that sounds perfect! ✨</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 5: Payment Joke -->
+  <div class="screen" id="screen5">
+    <div class="card card-payment">
+      <div class="card-icon-top">💳</div>
+      <h2 class="payment-title">one small fee</h2>
+      <p class="payment-desc">to confirm your acceptance of this date, please complete the following transaction. totally normal. everyone does this.</p>
+      <div class="invoice-box">
+        <div class="invoice-row">
+          <div>
+            <strong>Date Agreement™</strong>
+            <div class="invoice-sub">one-time fee · non-refundable · absolutely worth it</div>
+          </div>
+          <div class="invoice-price">$499</div>
+        </div>
+      </div>
+      <button class="btn btn-pink" onclick="goToScreen(6)">pay $499 &amp; confirm 💝</button>
+      <button class="btn-link" onclick="goToScreen(3)">go back</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 6: Confirmed! -->
+  <div class="screen" id="screen6">
+    <div class="card card-final">
+      <div class="final-emoji pop">🎉</div>
+      <h2 class="final-title">it's official!!</h2>
+      <p class="final-sub">our date is confirmed 🥰</p>
+      <div class="date-summary" id="dateSummary"></div>
+      <p class="final-note">i can't wait 🌸 this is gonna be so fun</p>
+      <div class="final-hearts">💕 💕 💕</div>
+      <button class="btn btn-pink" onclick="resetApp()">start over 🔄</button>
+    </div>
+  </div>
+
+  <!-- Progress dots -->
+  <div class="progress-dots" id="progressDots">
+    <span class="dot active" data-screen="1"></span>
+    <span class="dot" data-screen="2"></span>
+    <span class="dot" data-screen="3"></span>
+    <span class="dot" data-screen="4"></span>
+    <span class="dot" data-screen="5"></span>
+    <span class="dot" data-screen="6"></span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
