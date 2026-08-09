@@ -63,10 +63,10 @@ function runAway() {
   btn.style.left = x + 'px';
   btn.style.top  = y + 'px';
 
-  // Get sassier with each attempt
+  // Get sassier with each attempt (personalized for Deepti)
   const messages = [
-    'no 🐾', 'nope 🙅', 'nice try 😏', 'lol no 💅', 'never 🏃',
-    'catch me if u can 🐕', 'lmao 😂', 'STOP 😭', 'fine say yes already 🌸'
+    'no 🐾', 'nope Komal 🙅', 'nice try Deepti 😏', 'lol no 💅', 'never Betu 🏃',
+    'catch me if u can 🐕', 'OMG DEEPTI 😂', 'KOMAL PLS 😭', 'Betu just say yes already 🌸', 'DEEPTI!!! 💀'
   ];
   btn.textContent = messages[Math.min(noPresses - 1, messages.length - 1)];
 
@@ -148,6 +148,7 @@ function buildSummary() {
   }) : '—';
 
   el.innerHTML = `
+    <p><span class="label">👤</span> Deepti (aka Komal, aka Betu 🐾)</p>
     <p><span class="label">📅</span> ${dateStr}</p>
     <p><span class="label">⏰</span> ${selectedTime || '—'}</p>
     <p><span class="label">🍽</span> ${selectedFood || '—'}</p>

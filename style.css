@@ -605,3 +605,24 @@ html, body {
   .card { padding: 3rem 2.5rem; }
   .main-question { font-size: 2.1rem; }
 }
+
+/* ========== PERSONALIZATION ========== */
+.name-tag {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.name-highlight {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--pink-btn);
+  background: linear-gradient(135deg, #e91e8c, #9c27b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

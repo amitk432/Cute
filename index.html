@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Will You Go On a Date With Me? 🌸</title>
-  <meta name="description" content="A cute and playful date invitation app — say yes! 💖" />
+  <title>Hey Deepti... 🌸</title>
+  <meta name="description" content="A very important message for Deepti aka Komal aka Betu 💖" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet" />
@@ -21,15 +21,16 @@
         <div class="pet-emoji">🐶</div>
         <div class="sparkle-ring"></div>
       </div>
+      <p class="name-tag">psst... hey <span class="name-highlight">Deepti</span> 👀</p>
       <h1 class="main-question">
         🌸 Will you go on a<br/>date with me? 🌸
       </h1>
-      <p class="subtitle">i promise i'm kinda fun 🥺</p>
+      <p class="subtitle">i promise i'm actually really fun, Komal 🥺</p>
       <div class="btn-group">
         <button class="btn btn-yes" id="yesBtn" onclick="goToScreen(2)">YES ♥</button>
         <button class="btn btn-no" id="noBtn" onmouseover="runAway()" ontouchstart="runAway()">no 🐾</button>
       </div>
-      <p class="tiny-text">*the no button is broken, sorry 🙃</p>
+      <p class="tiny-text">*the no button has a little bug... totally not on purpose 🙃</p>
     </div>
   </div>
 
@@ -37,9 +38,9 @@
   <div class="screen" id="screen2">
     <div class="card card-surprise">
       <div class="surprise-emoji bounce">😭</div>
-      <h2 class="surprise-title">WAIT YOU ACTUALLY<br/>SAID YES??</h2>
-      <p class="surprise-sub">i was so ready for you to say no 😅</p>
-      <p class="surprise-sub2">okay okay okay let me collect myself real quick</p>
+      <h2 class="surprise-title">BETU said YES??<br/>no way.</h2>
+      <p class="surprise-sub">i was 100% ready for you to say no, Deepti 😅</p>
+      <p class="surprise-sub2">okay okay okay Komal let me collect myself real quick...</p>
       <div class="dots-loader"><span></span><span></span><span></span></div>
       <button class="btn btn-pink" onclick="goToScreen(3)" style="margin-top:1.5rem">okay okay! →</button>
     </div>
@@ -49,7 +50,8 @@
   <div class="screen" id="screen3">
     <div class="card">
       <div class="calendar-icon">📅 🐾</div>
-      <h2 class="section-title">So... when are you free?</h2>
+      <h2 class="section-title">So Deepti...<br/>when are you free?</h2>
+      <p class="pick-subtitle">pick wisely, Komal 😌</p>
       <div class="form-group">
         <label class="form-label">Pick a Day 📆</label>
         <input type="date" id="datePicker" class="cute-input" />
@@ -78,7 +80,7 @@
   <div class="screen" id="screen4">
     <div class="card">
       <h2 class="section-title">What are we feeling? 🍽✨</h2>
-      <p class="pick-subtitle">pick your vibe</p>
+      <p class="pick-subtitle">your choice, Betu 👑</p>
       <div class="food-grid">
         <button class="food-card" onclick="selectFood(this,'Pizza')" id="food-Pizza"><span class="food-emoji">🍕</span><span class="food-name">Pizza</span></button>
         <button class="food-card" onclick="selectFood(this,'Sushi')" id="food-Sushi"><span class="food-emoji">🍣</span><span class="food-name">Sushi</span></button>
@@ -99,12 +101,12 @@
     <div class="card card-payment">
       <div class="card-icon-top">💳</div>
       <h2 class="payment-title">one small fee</h2>
-      <p class="payment-desc">to confirm your acceptance of this date, please complete the following transaction. totally normal. everyone does this.</p>
+      <p class="payment-desc">to confirm your acceptance of this date, Deepti, please complete the following transaction. totally normal. everyone does this. Komal trusts me.</p>
       <div class="invoice-box">
         <div class="invoice-row">
           <div>
             <strong>Date Agreement™</strong>
-            <div class="invoice-sub">one-time fee · non-refundable · absolutely worth it</div>
+            <div class="invoice-sub">one-time fee · non-refundable · Betu approved ✓</div>
           </div>
           <div class="invoice-price">$499</div>
         </div>
@@ -118,10 +120,10 @@
   <div class="screen" id="screen6">
     <div class="card card-final">
       <div class="final-emoji pop">🎉</div>
-      <h2 class="final-title">it's official!!</h2>
-      <p class="final-sub">our date is confirmed 🥰</p>
+      <h2 class="final-title">it's official, Deepti!!</h2>
+      <p class="final-sub">our date is confirmed, Komal 🥰</p>
       <div class="date-summary" id="dateSummary"></div>
-      <p class="final-note">i can't wait 🌸 this is gonna be so fun</p>
+      <p class="final-note">i can't wait, Betu 🌸 this is gonna be the best</p>
       <div class="final-hearts">💕 💕 💕</div>
       <button class="btn btn-pink" onclick="resetApp()">start over 🔄</button>
     </div>
